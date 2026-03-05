@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balance0805.github.io/banff/sitemap.xml
