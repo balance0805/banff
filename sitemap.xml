@@ -1,47 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://balance0805.github.io/banff/</loc>
-<lastmod>2026-03-04</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/penghu-best-location.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/penghu-best-location.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/penghu-stay-guide.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/penghu-stay-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/magong-accommodation.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/magong-accommodation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/penghu-3days-2nights.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/penghu-3days-2nights.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/penghu-first-time.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/penghu-first-time.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://balance0805.github.io/banff/penghu-airport-nearby.html</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
+  <url>
+    <loc>https://balance0805.github.io/banff/penghu-airport-nearby.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://balance0805.github.io/banff/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>
