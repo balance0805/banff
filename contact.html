@@ -8,24 +8,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
-        .nav-link { transition: color 0.3s ease; }
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .nav-link { transition: all 0.3s ease; }
         .nav-link:hover { color: #d97706; }
         .footer-bg { background-color: #1a1512; }
-        .card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         
-        /* 針對您提供的地圖代碼進行響應式優化 */
-        .mapouter { position: relative; text-align: right; width: 100%; height: 450px; }
-        .gmap_canvas { overflow: hidden; background: none !important; width: 100%; height: 450px; border-radius: 1rem; }
-        .gmap_iframe { width: 100% !important; height: 100% !important; border: 0; }
+        /* 現代卡片陰影 */
+        .card-shadow { 
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.04), 0 4px 10px -2px rgba(0,0,0,0.02); 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+        }
+
+        /* 聯繫按鈕特效 */
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+        }
+
+        /* 針對地圖的響應式優化 */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+        .gmap_iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+        }
     </style>
 </head>
-<body class="bg-white text-stone-800">
+<body class="bg-white text-stone-800 antialiased">
 
-    <!-- 導航列 -->
-    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-            <a href="index.html" class="font-bold text-2xl tracking-tighter">澎湖班夫小鎮</a>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-stone-900">澎湖班夫小鎮</a>
             <div class="hidden lg:flex items-center space-x-6 text-[15px] font-medium text-stone-600">
                 <a href="index.html" class="nav-link">首頁</a>
                 <a href="penghu-stay-guide.html" class="nav-link">住宿指南</a>
@@ -34,105 +61,147 @@
                 <a href="penghu-airport-nearby.html" class="nav-link">機場附近</a>
                 <a href="penghu-first-time.html" class="nav-link">新手必看</a>
                 <a href="penghu-3days-2nights.html" class="nav-link">行程規劃</a>
-                <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition">訂房資訊</a>
+                <a href="contact.html" class="bg-amber-600 text-white px-6 py-2.5 rounded-xl hover:bg-amber-700 transition shadow-lg shadow-amber-600/20">訂房資訊</a>
             </div>
         </div>
     </nav>
 
-    <!-- 主內容區：聯繫資訊與地圖 -->
-    <main class="max-w-6xl mx-auto py-20 px-6">
-        <h1 class="text-4xl font-bold mb-16 tracking-tight">聯繫澎湖班夫小鎮｜訂房資訊與位置</h1>
+    <main class="max-w-6xl mx-auto py-24 px-6">
+        <header class="mb-20 text-center md:text-left">
+            <span class="text-amber-600 font-black tracking-[0.2em] text-xs uppercase mb-4 block">RESERVATION & LOCATION</span>
+            <h1 class="text-4xl md:text-5xl font-black mb-6 tracking-tight text-stone-900 leading-tight">聯繫澎湖班夫小鎮｜訂房資訊與位置</h1>
+            <div class="w-20 h-1.5 bg-amber-600 rounded-full mx-auto md:mx-0"></div>
+        </header>
         
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <!-- 左側：聯繫資訊 -->
-            <div class="space-y-10">
-                <h2 class="text-2xl font-bold border-b pb-4 border-stone-100">聯絡我們</h2>
-                <div class="space-y-6">
-                    <div class="flex items-baseline">
-                        <span class="w-24 font-bold text-stone-500">官方 LINE</span>
-                        <a href="https://page.line.me/cww2721s" class="text-xl text-blue-500 hover:underline">@cww2721s</a>
-                    </div>
-                    <div class="flex items-baseline border-t border-stone-50 pt-6">
-                        <span class="w-24 font-bold text-stone-500">官方網站</span>
-                        <a href="http://www.ibanff.tw/" target="_blank" class="text-xl text-blue-500 hover:underline">www.ibanff.tw</a>
-                    </div>
-                    <div class="flex items-baseline border-t border-stone-50 pt-6">
-                        <span class="w-24 font-bold text-stone-500">交通優勢</span>
-                        <p class="flex-1 text-stone-600 leading-relaxed">
-                            距離澎湖機場僅 6km / 馬公市區 5min 車程 /<br>
-                            位於主要觀光幹道旁，北環必經路段。
-                        </p>
-                    </div>
-                    <div class="flex items-baseline border-t border-stone-50 pt-6">
-                        <span class="w-24 font-bold text-stone-500">民宿地址</span>
-                        <p class="flex-1 text-stone-600 font-medium">澎湖縣馬公市東衛里5-7號</p>
-                    </div>
-                </div>
-            </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="space-y-12">
+                <section>
+                    <h2 class="text-xl font-bold text-stone-400 mb-8 flex items-center">
+                        <span class="mr-4 text-stone-900">聯絡我們</span>
+                        <div class="flex-1 h-px bg-stone-100"></div>
+                    </h2>
+                    
+                    <div class="grid gap-6">
+                        <a href="https://page.line.me/cww2721s" target="_blank" class="contact-card flex items-center p-6 bg-[#06C755] text-white rounded-3xl shadow-xl shadow-green-100 group">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mr-6 text-2xl">
+                                💬
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-black tracking-widest opacity-80 mb-1 uppercase">Official LINE</div>
+                                <div class="text-2xl font-black">@cww2721s</div>
+                            </div>
+                            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                                ➜
+                            </div>
+                        </a>
 
-            <!-- 右側：地圖位置 -->
-            <div class="space-y-10">
-                <h2 class="text-2xl font-bold border-b pb-4 border-stone-100">地圖位置</h2>
-                <div class="rounded-2xl overflow-hidden shadow-xl border border-stone-100">
-                    <div class="mapouter">
-                        <div class="gmap_canvas">
-                            <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=澎湖班夫小鎮&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        <a href="http://www.ibanff.tw/" target="_blank" class="contact-card flex items-center p-6 bg-stone-900 text-white rounded-3xl shadow-xl shadow-stone-200 group">
+                            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mr-6 text-2xl">
+                                🌐
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-black tracking-widest opacity-80 mb-1 uppercase">Official Website</div>
+                                <div class="text-2xl font-black">www.ibanff.tw</div>
+                            </div>
+                            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                                ➜
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="mt-12 space-y-8 bg-stone-50 p-8 md:p-10 rounded-[2.5rem] border border-stone-100">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-bold mr-6 flex-shrink-0 mt-1">📍</div>
+                            <div>
+                                <span class="block text-xs font-black text-amber-600 tracking-widest uppercase mb-2">Location</span>
+                                <p class="text-xl text-stone-900 font-bold">澎湖縣馬公市東衛里5-7號</p>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-stone-200"></div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-bold mr-6 flex-shrink-0 mt-1">🚗</div>
+                            <div class="flex-1">
+                                <span class="block text-xs font-black text-amber-600 tracking-widest uppercase mb-2">Transport Advantage</span>
+                                <p class="text-stone-600 leading-relaxed font-medium">
+                                    距離澎湖機場僅 <span class="text-stone-900 font-bold">6km</span> / 
+                                    馬公市區 <span class="text-stone-900 font-bold">5min</span> 車程 /<br class="hidden md:block">
+                                    位於主要觀光幹道旁，北環必經路段。
+                                </p>
+                            </div>
                         </div>
                     </div>
+                </section>
+            </div>
+
+            <div class="space-y-8">
+                <h2 class="text-xl font-bold text-stone-400 mb-8 flex items-center">
+                    <span class="mr-4 text-stone-900">地圖位置</span>
+                    <div class="flex-1 h-px bg-stone-100"></div>
+                </h2>
+                <div class="map-container card-shadow border border-stone-100">
+                    <iframe class="gmap_iframe" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=澎湖班夫小鎮&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe>
                 </div>
+                <p class="text-center text-stone-400 text-sm italic">點擊地圖可放大檢視詳細路線</p>
             </div>
         </div>
     </main>
 
-    <!-- 更多實用連結區域 (六宮格) -->
-    <section class="bg-stone-50 py-20 px-6">
+    <section class="bg-stone-50 py-24 px-6 border-y border-stone-100">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-2xl font-bold text-center mb-12">更多澎湖住宿相關實用連結</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a href="penghu-stay-guide.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">澎湖住宿指南</a>
-                <a href="penghu-best-location.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">住哪最方便</a>
-                <a href="magong-accommodation.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">馬公住宿推薦</a>
-                <a href="penghu-airport-nearby.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">機場附近住宿</a>
-                <a href="penghu-first-time.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">新手住宿攻略</a>
-                <a href="penghu-3days-2nights.html" class="bg-white p-6 rounded-xl text-center font-medium card-shadow hover:bg-stone-100 transition">行程與住宿規劃</a>
+            <h3 class="text-2xl font-black text-center mb-16 tracking-tight text-stone-900">更多澎湖住宿相關實用連結</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <a href="penghu-stay-guide.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">澎湖住宿指南</a>
+                <a href="penghu-best-location.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">住哪最方便</a>
+                <a href="magong-accommodation.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">馬公住宿推薦</a>
+                <a href="penghu-airport-nearby.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">機場附近住宿</a>
+                <a href="penghu-first-time.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">新手住宿攻略</a>
+                <a href="penghu-3days-2nights.html" class="bg-white p-8 rounded-2xl text-center font-bold text-stone-700 card-shadow border border-stone-100 hover:text-amber-600">行程與住宿規劃</a>
             </div>
         </div>
     </section>
 
-    <!-- 頁尾 -->
-    <footer class="footer-bg text-white py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
-            <div class="md:col-span-1 space-y-4">
-                <h4 class="text-2xl font-bold tracking-tighter">澎湖班夫小鎮</h4>
-                <p class="text-stone-400 text-sm leading-relaxed">提供最安靜、高品質的澎湖住宿體驗，讓您的旅程慢下來。</p>
+    <footer class="footer-bg text-white py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-16 mb-20">
+                <div class="md:col-span-5 space-y-8">
+                    <h4 class="text-3xl font-black tracking-tighter text-amber-500">澎湖班夫小鎮</h4>
+                    <p class="text-stone-400 leading-relaxed max-w-sm">提供最安靜、高品質的澎湖住宿體驗，讓您的旅程慢下來，深度感受這座海島的美。官方網站直接預訂，享有最優價格與專人諮詢服務。</p>
+                </div>
+                
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-12">
+                    <div>
+                        <h5 class="font-bold mb-8 text-white uppercase tracking-widest text-xs">快速連結</h5>
+                        <ul class="space-y-4 text-sm text-stone-400">
+                            <li><a href="penghu-stay-guide.html" class="hover:text-amber-500 transition">澎湖住宿指南</a></li>
+                            <li><a href="magong-accommodation.html" class="hover:text-amber-500 transition">馬公住宿精選</a></li>
+                            <li><a href="penghu-airport-nearby.html" class="hover:text-amber-500 transition">機場交通住宿</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-8 text-white uppercase tracking-widest text-xs">聯絡資訊</h5>
+                        <ul class="space-y-4 text-sm text-stone-400">
+                            <li><span class="block text-stone-600 font-bold mb-1">LINE</span>@cww2721s</li>
+                            <li><span class="block text-stone-600 font-bold mb-1">FB</span>澎湖班夫小鎮渡假民宿</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-8 text-white uppercase tracking-widest text-xs">民宿地址</h5>
+                        <p class="text-sm text-stone-400 leading-relaxed">
+                            澎湖縣馬公市<br>東衛里5-7號
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h5 class="font-bold mb-6 text-stone-200">快速連結</h5>
-                <ul class="space-y-3 text-sm text-stone-400">
-                    <li><a href="penghu-stay-guide.html" class="hover:text-white transition">澎湖住宿指南</a></li>
-                    <li><a href="magong-accommodation.html" class="hover:text-white transition">馬公住宿精選</a></li>
-                    <li><a href="penghu-airport-nearby.html" class="hover:text-white transition">機場交通住宿</a></li>
-                </ul>
+            
+            <div class="pt-12 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-600 font-bold tracking-[0.3em] uppercase space-y-4 md:space-y-0 text-center">
+                <span>© 2026 PENGHU BANFF TOWN ALL RIGHTS RESERVED.</span>
+                <span>澎湖住宿推薦首選｜深度島嶼生活</span>
             </div>
-            <div>
-                <h5 class="font-bold mb-6 text-stone-200">聯絡資訊</h5>
-                <ul class="space-y-3 text-sm text-stone-400">
-                    <li>官方 LINE: @cww2721s</li>
-                    <li>地址: 澎湖縣馬公市東衛里5-7號</li>
-                    <p class="text-sm mb-2 text-stone-300">FB:澎湖班夫小鎮渡假民宿</p>   
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold mb-6 text-stone-200">追蹤我們</h5>
-                <p class="text-sm text-stone-400 leading-relaxed">歡迎透過官網預訂，獲取最新優惠資訊。</p>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-stone-800 text-center text-[11px] text-stone-500 tracking-widest uppercase">
-            © 2026 澎湖班夫小鎮  All rights reserved. 澎湖住宿推薦首選。
         </div>
     </footer>
 
 </body>
 
 </html>
-
