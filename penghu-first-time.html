@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>澎湖新手必看指南｜第一次去澎湖一定要知道的 8 件事｜澎湖班夫小鎮</title>
     <meta name="description" content="第一次去澎湖？這篇整理了新手必知的 8 件事：交通選擇、住宿位置分析、花火節規劃等，幫您少走冤枉路。">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; }
         .nav-link { transition: color 0.3s ease; }
@@ -15,13 +17,31 @@
         .step-number { font-size: 3rem; line-height: 1; font-weight: 700; color: rgba(217, 119, 6, 0.15); position: absolute; top: -1rem; left: -1rem; z-index: 0; }
         .content-card { position: relative; z-index: 1; }
     </style>
-</head>
-<body class="bg-white text-stone-800">
 
-    <!-- 導航列 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "第一次去澎湖一定要知道的 8 件事",
+      "description": "為第一次前往澎湖旅遊的新手整理的交通、住宿、行程規劃指南。",
+      "step": [
+        { "@type": "HowToStep", "text": "澎湖比想像大，馬公到西嶼單程約40分鐘。" },
+        { "@type": "HowToStep", "text": "住宿位置比海景更重要，建議選交通動線順暢處。" },
+        { "@type": "HowToStep", "text": "根據成員人數選擇機車或汽車，夏日防曬是關鍵。" },
+        { "@type": "HowToStep", "text": "跳島行程（如七美藍洞）需提前1-2週預訂。" },
+        { "@type": "HowToStep", "text": "花火節期間需提早一個月以上訂機票住宿。" },
+        { "@type": "HowToStep", "text": "澎湖海風強大，隨身攜帶薄外套。" },
+        { "@type": "HowToStep", "text": "三天兩夜是標準玩法，動線順暢最重要。" },
+        { "@type": "HowToStep", "text": "選擇機場與市區中間的住宿點能讓行程更放鬆。" }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-stone-800 antialiased">
+
     <nav class="sticky top-0 z-50 bg-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-            <a href="index.html" class="font-bold text-2xl tracking-tighter">澎湖班夫小鎮</a>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter hover:text-amber-600 transition">澎湖班夫小鎮</a>
             <div class="hidden lg:flex items-center space-x-6 text-[15px] font-medium text-stone-600">
                 <a href="index.html" class="nav-link">首頁</a>
                 <a href="penghu-stay-guide.html" class="nav-link">住宿指南</a>
@@ -32,13 +52,20 @@
                 <a href="penghu-3days-2nights.html" class="nav-link">行程規劃</a>
                 <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition">訂房資訊</a>
             </div>
+            <div class="lg:hidden">
+                <select onchange="window.location.href=this.value" class="border p-2 rounded-lg text-sm bg-stone-50">
+                    <option value="penghu-first-time.html">新手必看</option>
+                    <option value="index.html">首頁</option>
+                    <option value="penghu-stay-guide.html">住宿指南</option>
+                    <option value="contact.html">訂房資訊</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <!-- 主視覺區 -->
     <header class="bg-stone-50 py-20 border-b border-stone-100">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <span class="inline-block px-4 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-bold mb-4">BEGINNER'S GUIDE</span>
+            <span class="inline-block px-4 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-bold mb-4 uppercase tracking-widest">Beginner's Guide</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-stone-900">澎湖新手必看指南</h1>
             <p class="text-xl text-stone-600 leading-relaxed font-light">第一次去澎湖一定要知道的 8 件事</p>
         </div>
@@ -46,14 +73,12 @@
 
     <main class="max-w-4xl mx-auto py-16 px-6">
         
-        <!-- 前言 -->
-        <section class="bg-amber-50 p-8 md:p-10 rounded-[2rem] border border-amber-100 mb-20 text-stone-700 leading-relaxed">
+        <section class="bg-amber-50 p-8 md:p-10 rounded-[2rem] border border-amber-100 mb-20 text-stone-700 leading-relaxed shadow-sm">
             <p class="text-lg">
                 第一次規劃澎湖旅行，常會出現幾個疑問：三天兩夜夠嗎？要不要租機車？住海邊比較好還是住市區？會不會每天都在騎車？這篇整理了「第一次來澎湖一定要知道的 8 件事」，幫您少走冤枉路。
             </p>
         </section>
 
-        <!-- 8 件事列表 -->
         <div class="grid md:grid-cols-2 gap-x-12 gap-y-16 mb-24">
             
             <div class="relative">
@@ -92,7 +117,7 @@
                 <span class="step-number">05</span>
                 <div class="content-card">
                     <h3 class="text-xl font-bold mb-3 text-stone-900">花火節期間要更早規劃</h3>
-                    <p class="text-stone-600 leading-relaxed text-sm">4–8 月七龍珠花火節期間機票與住宿快速客滿。若確定要看煙火，建議至少提前 1 個月以上安排，住宿盡量選市區周邊避免散場後長途騎車。</p>
+                    <p class="text-stone-600 leading-relaxed text-sm">4–8 月花火節期間機票與住宿快速客滿。若確定要看煙火，建議至少提前 1 個月以上安排，住宿盡量選市區周邊避免散場後長途騎車。</p>
                 </div>
             </div>
 
@@ -108,7 +133,7 @@
                 <span class="step-number">07</span>
                 <div class="content-card">
                     <h3 class="text-xl font-bold mb-3 text-stone-900">三天兩夜其實剛剛好</h3>
-                    <p class="text-stone-600 leading-relaxed text-sm">標準玩法：D1市區、D2環島、D3跳島或伴手禮。重點是動線順不順，若每天花太多時間移動，旅遊品質會下降。</p>
+                    <p class="text-stone-600 leading-relaxed text-sm">標準玩法：D1 環島、D2 跳島、D3 市區跟伴手禮。重點是動線順不順，若每天花太多時間移動，旅遊品質會下降。</p>
                 </div>
             </div>
 
@@ -122,7 +147,6 @@
 
         </div>
 
-        <!-- 總結住宿建議 -->
         <section class="bg-stone-900 text-white p-10 md:p-16 rounded-[3rem] mb-24 shadow-xl">
             <h2 class="text-3xl font-bold mb-8 text-amber-400">第一次來澎湖怎麼選住宿？</h2>
             <div class="grid md:grid-cols-2 gap-10">
@@ -141,9 +165,8 @@
             </div>
         </section>
 
-        <!-- FAQ -->
         <section class="mb-24">
-            <h2 class="text-3xl font-bold mb-10 text-center">新手常見問題 FAQ</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center text-stone-900">新手常見問題 FAQ</h2>
             <div class="space-y-4">
                 <details class="group border border-stone-100 bg-stone-50 rounded-2xl p-6" open>
                     <summary class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
@@ -169,7 +192,6 @@
             </div>
         </section>
 
-        <!-- 行動呼籲 -->
         <div class="text-center">
             <h3 class="text-2xl font-bold mb-8 text-stone-800">準備好開啟您的澎湖之旅了嗎？</h3>
             <a href="contact.html" class="inline-block bg-amber-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">聯繫班夫小鎮瞭解更多</a>
@@ -177,10 +199,9 @@
 
     </main>
 
-    <!-- 頁尾 -->
     <footer class="footer-bg text-white py-16 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h4 class="text-xl font-bold mb-4 tracking-tighter">澎湖班夫小鎮</h4>
+            <h4 class="text-xl font-bold mb-4 tracking-tighter italic">澎湖班夫小鎮</h4>
             <p class="text-stone-500 text-sm mb-8">位於機場與市區的完美中點，新手住宿的最佳選擇。</p>
             <div class="border-t border-stone-800 pt-8 text-[11px] text-stone-600 tracking-widest uppercase">
                 © 2026 澎湖班夫小鎮 All rights reserved.
