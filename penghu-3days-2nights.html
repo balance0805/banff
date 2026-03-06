@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>澎湖三天兩夜行程規劃建議｜以班夫小鎮為中心｜澎湖班夫小鎮</title>
-    <meta name="description" content="最順路的澎湖三天兩夜行程安排。住在交通中心班夫小鎮，教您如何玩遍北環與馬公市區，享受最高效率的澎湖之旅。">
+    <title>澎湖三天兩夜行程規劃建議｜環島、跳島、市區買名產｜澎湖班夫小鎮</title>
+    <meta name="description" content="最順路的澎湖三天兩夜行程安排。第一天經典北環島，第二天七美望安跳島，第三天馬公市區採買名產。住在交通中心班夫小鎮，享受最放鬆的澎湖之旅。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
         .nav-link { transition: color 0.3s ease; }
         .nav-link:hover { color: #d97706; }
         .footer-bg { background-color: #1a1512; }
-        .card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .itinerary-step { position: relative; }
-        .itinerary-step::before { content: ""; position: absolute; left: 1.25rem; top: 2.5rem; bottom: 0; width: 2px; background: #e7e5e4; }
+        
+        /* 時間軸線條 */
+        .itinerary-step { position: relative; transition: all 0.3s ease; }
+        .itinerary-step::before { 
+            content: ""; 
+            position: absolute; 
+            left: 1.25rem; 
+            top: 2.5rem; 
+            bottom: -2rem; 
+            width: 2px; 
+            background: linear-gradient(to bottom, #d97706, #e7e5e4); 
+        }
         .itinerary-step:last-child::before { display: none; }
+        
+        @media (max-width: 640px) {
+            .itinerary-step::before { left: 0.75rem; }
+            .itinerary-icon { width: 1.5rem; height: 1.5rem; font-size: 0.75rem; }
+            .itinerary-content { margin-left: 1.5rem; }
+        }
     </style>
 </head>
-<body class="bg-white text-stone-800">
+<body class="bg-white text-stone-800 antialiased">
 
-    <!-- 導航列 -->
-    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-            <a href="index.html" class="font-bold text-2xl tracking-tighter">澎湖班夫小鎮</a>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-stone-900">澎湖班夫小鎮</a>
             <div class="hidden lg:flex items-center space-x-6 text-[15px] font-medium text-stone-600">
                 <a href="index.html" class="nav-link">首頁</a>
                 <a href="penghu-stay-guide.html" class="nav-link">住宿指南</a>
@@ -31,105 +45,106 @@
                 <a href="magong-accommodation.html" class="nav-link">馬公推薦</a>
                 <a href="penghu-airport-nearby.html" class="nav-link">機場附近</a>
                 <a href="penghu-first-time.html" class="nav-link">新手必看</a>
-                <a href="penghu-3days-2nights.html" class="text-amber-600 font-bold">行程規劃</a>
-                <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition">訂房資訊</a>
+                <a href="penghu-3days-2nights.html" class="text-amber-600 font-bold border-b-2 border-amber-600 pb-1">行程規劃</a>
+                <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition shadow-sm">訂房資訊</a>
             </div>
         </div>
     </nav>
 
-    <!-- 主視覺區 -->
-    <header class="bg-stone-50 py-20 border-b border-stone-100">
+    <header class="bg-stone-50 py-24 border-b border-stone-100">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-stone-900">澎湖三天兩夜行程規劃：以班夫小鎮為中心</h1>
-            <p className="text-xl text-stone-600 leading-relaxed font-light">住在交通便利的位置，您可以把三天玩出五天的效率。不浪費時間在移動上，就是最好的行程安排。</p>
+            <span class="text-amber-600 font-bold tracking-widest text-sm mb-4 block uppercase">The Perfect 3-Day Plan</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-stone-900 leading-tight">澎湖三天兩夜最順行程：<br class="hidden md:block">環島、跳島、買名產</h1>
+            <p class="text-xl text-stone-600 leading-relaxed font-light max-w-2xl mx-auto">第一天衝北環、第二天去跳島、第三天逛市區。把體力花在美景上，把時間留給班夫小鎮的寧靜。</p>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto py-16 px-6">
         
-        <!-- 行程詳細內容 -->
-        <div class="space-y-16 mb-24">
+        <div class="space-y-20 mb-32">
             
-            <!-- Day 1 -->
-            <section class="itinerary-step">
+            <section class="itinerary-step group">
                 <div class="flex items-start">
-                    <div class="bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0">1</div>
-                    <div class="ml-8">
-                        <h2 class="text-2xl font-bold mb-6">第一天｜抵達澎湖 → 市區輕鬆逛</h2>
-                        <div class="space-y-6 text-stone-600 leading-relaxed">
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">上午：抵達澎湖機場</h3>
-                                <p>多數旅客會從澎湖機場入境，建議選擇距離機場較近的住宿，放完行李再出發，行程會順很多。若住宿距離機場約 3 公里、開車 5 分鐘可到馬公市區，第一天不會因移動疲勞而影響旅遊心情。</p>
+                    <div class="itinerary-icon bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0 shadow-lg group-hover:scale-110 transition-transform">1</div>
+                    <div class="itinerary-content ml-8">
+                        <h2 class="text-2xl font-bold mb-8 text-stone-900">第一天｜抵達澎湖 → 經典北環島線</h2>
+                        <div class="space-y-8 text-stone-600 leading-relaxed">
+                            <div class="bg-white p-6 rounded-2xl border border-stone-50 shadow-sm">
+                                <h3 class="font-bold text-stone-900 mb-2 flex items-center text-lg">
+                                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>上午：機場接機 → 班夫小鎮置物
+                                </h3>
+                                <p>抵達機場後，先前往位於「動線中心」的班夫小鎮放行李。隨即跨上機車或租車，直接開啟澎湖最著名的北環島公路之旅。</p>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">下午：馬公市區散步</h3>
-                                <p class="mb-2">推薦順遊重點：</p>
-                                <ul class="list-disc pl-5 space-y-1 font-medium text-stone-700">
-                                    <li>中央老街</li>
-                                    <li>四眼井</li>
-                                    <li>觀音亭海濱</li>
-                                </ul>
-                                <p class="mt-2 text-sm italic">這些景點都集中在馬公市區，傍晚沿著海岸線走走，非常舒服。</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-stone-50 p-5 rounded-xl border border-stone-100">
+                                    <h4 class="font-bold text-stone-900 mb-2">下午：北環必拍景點</h4>
+                                    <ul class="text-sm space-y-2">
+                                        <li>📍 通梁古榕（吃仙人掌冰）</li>
+                                        <li>📍 跨海大橋（澎湖地標）</li>
+                                        <li>📍 後寮天堂路（超美海堤）</li>
+                                        <li>📍 大菓葉玄武岩（壯觀地質）</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-stone-50 p-5 rounded-xl border border-stone-100">
+                                    <h4 class="font-bold text-stone-900 mb-2">傍晚：西嶼落霞</h4>
+                                    <p class="text-sm">一路玩到西嶼燈塔看夕陽，回程順路經過東衛回到民宿休息，這條動線完全不走回頭路。</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">晚上：花火節 or 海景夜拍</h3>
-                                <p>若剛好遇到花火節，可到觀音亭欣賞煙火。若非花火期間，市區夜景也很適合散步。</p>
-                                <p class="mt-4 text-amber-700 font-bold">👉 第一天建議重點：不要排太遠，讓身體適應海島節奏。</p>
+                            <p class="mt-4 text-amber-700 font-bold bg-amber-50 inline-block px-4 py-1 rounded-md">👉 建議：第一天抵達後體力最足，最適合長距離的環島行程。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="itinerary-step group">
+                <div class="flex items-start">
+                    <div class="itinerary-icon bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0 shadow-lg group-hover:scale-110 transition-transform">2</div>
+                    <div class="itinerary-content ml-8">
+                        <h2 class="text-2xl font-bold mb-8 text-stone-900">第二天｜南海/東海跳島 → 海上活動</h2>
+                        <div class="space-y-8 text-stone-600 leading-relaxed">
+                            <div class="bg-white p-6 rounded-2xl border border-stone-50 shadow-sm">
+                                <h3 class="font-bold text-stone-900 mb-2 flex items-center text-lg">
+                                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>全天：跳島大冒險
+                                </h3>
+                                <p>清晨前往碼頭，建議選擇「南海跳島（七美、望安）」看雙心石滬，或是「東海行程」享受浮潛與餵魚。班夫小鎮距離馬公港口約 10 分鐘，出發非常準時不趕忙。</p>
+                            </div>
+                            
+                            <div class="bg-stone-900 text-stone-100 p-6 rounded-2xl shadow-xl">
+                                <h4 class="font-bold text-amber-400 mb-3 text-lg">晚上：市區海鮮大餐 / 花火節</h4>
+                                <p class="mb-2">跳島回航後體力消耗大，回到馬公市區享用豐盛的海鮮燒烤或熱炒，若遇花火節日期，則前往觀音亭欣賞煙火。</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Day 2 -->
-            <section class="itinerary-step">
+            <section class="itinerary-step group">
                 <div class="flex items-start">
-                    <div class="bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0">2</div>
-                    <div class="ml-8">
-                        <h2 class="text-2xl font-bold mb-6">第二天｜經典環島路線</h2>
-                        <div class="space-y-6 text-stone-600 leading-relaxed">
-                            <p class="font-medium text-stone-800">第二天是澎湖旅程的重點。建議走「順時針環島」，動線最順。</p>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">上午：跨海大橋 → 通梁古榕</h3>
-                                <p>拍照、走走，感受澎湖代表性地標。</p>
+                    <div class="itinerary-icon bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0 shadow-lg group-hover:scale-110 transition-transform">3</div>
+                    <div class="itinerary-content ml-8">
+                        <h2 class="text-2xl font-bold mb-8 text-stone-900">第三天｜馬公市區巡禮 → 買名產回程</h2>
+                        <div class="space-y-8 text-stone-600 leading-relaxed">
+                            <div class="bg-white p-6 rounded-2xl border border-stone-50 shadow-sm">
+                                <h3 class="font-bold text-stone-900 mb-2 flex items-center text-lg">
+                                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>上午：古蹟與慢活
+                                </h3>
+                                <p>最後一天不用趕路，留在馬公市區：中央老街、天后宮、篤行十村。感受全台灣最老街區的歷史氛圍。</p>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">中午：白沙或西嶼海鮮</h3>
-                                <p>海鮮選擇多，建議避開用餐尖峰。</p>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">下午：西嶼燈塔 → 夢幻沙灘</h3>
-                                <p>海景非常震撼，是澎湖必訪景點。</p>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">傍晚：回馬公市區</h3>
-                                <p>環島一圈後，回到市區住宿最方便。若住在交通動線中段位置，回程不必繞遠路，節省體力。</p>
-                                <p class="mt-4 text-amber-700 font-bold">👉 第二天建議重點：住在市區周邊，環島回程最順。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Day 3 -->
-            <section class="itinerary-step">
-                <div class="flex items-start">
-                    <div class="bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 shrink-0">3</div>
-                    <div class="ml-8">
-                        <h2 class="text-2xl font-bold mb-6">第三天｜海上活動 or 咖啡放鬆</h2>
-                        <div class="space-y-6 text-stone-600 leading-relaxed">
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">選項 A：跳島行程</h3>
-                                <p>如七美、望安跳島，一早出發，下午回到馬公。</p>
+                            <div class="border-2 border-amber-100 p-6 rounded-2xl">
+                                <h3 class="font-bold text-stone-900 mb-4 text-center">🎁 必買名產清單</h3>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                    <div class="bg-stone-50 py-3 rounded-lg font-medium">黑糖糕</div>
+                                    <div class="bg-stone-50 py-3 rounded-lg font-medium">干貝醬</div>
+                                    <div class="bg-stone-50 py-3 rounded-lg font-medium">鹹餅</div>
+                                    <div class="bg-stone-50 py-3 rounded-lg font-medium">花生酥</div>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-stone-900 mb-2">選項 B：市區咖啡＋伴手禮</h3>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>海景咖啡廳或市區甜點店</li>
-                                    <li>買黑糖糕與干貝醬</li>
-                                </ul>
-                            </div>
-                            <p class="mt-4 italic text-stone-500">若住宿離機場不遠，退房後前往機場會更從容，不必預留太多移動時間。</p>
+                            
+                            <p class="text-center italic text-stone-500 py-4 border-t border-stone-100">
+                                班夫小鎮就在回機場的必經之路上，採買完回民宿取行李，僅需 5 分鐘車程即可抵達機場，悠閒劃下句點。
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -137,87 +152,89 @@
 
         </div>
 
-        <!-- 住宿建議區塊 -->
-        <section class="bg-stone-900 text-white p-12 rounded-[2rem] mb-24">
-            <h2 class="text-3xl font-bold mb-8 text-center text-amber-400">澎湖住哪裡比較順？</h2>
-            <div class="space-y-6 text-stone-300">
-                <p class="leading-relaxed">多數第一次來的旅客，會選擇馬公市區或市區外圍 5–10 分鐘車程的住宿。原因很簡單：</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> 去機場方便</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> 去市區方便</li>
-                    </ul>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> 環島起點就在附近</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> 晚上吃東西選擇多</li>
-                    </ul>
+        <section class="bg-stone-900 text-white p-12 rounded-[3rem] mb-24 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-600/20 rounded-full blur-3xl"></div>
+            <h2 class="text-3xl font-bold mb-8 text-center text-amber-400">這份行程為什麼最順路？</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-stone-300 relative z-10 text-center">
+                <div>
+                    <div class="text-4xl mb-3">⚡</div>
+                    <h4 class="text-white font-bold mb-2">體力分配優化</h4>
+                    <p class="text-sm">第一天最有力氣衝環島，第二天享受跳島，第三天保留體力採買回程。</p>
                 </div>
-                <p class="pt-6 border-t border-stone-800">若住在太偏遠的海邊，雖然景色好，但每天往返市區會耗費不少時間。因此若想兼顧交通與安靜，選擇「市區動線中段位置」會是相對平衡的選擇。</p>
+                <div>
+                    <div class="text-4xl mb-3">📍</div>
+                    <h4 class="text-white font-bold mb-2">絕佳中繼站</h4>
+                    <p class="text-sm">班夫小鎮位於機場、環島公路、市區的三角中心，每天都能省下 20 分鐘車程。</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-3">🛍️</div>
+                    <h4 class="text-white font-bold mb-2">名產最新鮮</h4>
+                    <p class="text-sm">最後一天才買黑糖糕，賞味期限最長，且不用提著名產到處跑。</p>
+                </div>
             </div>
         </section>
 
-        <!-- FAQ 問答區 -->
         <section class="mb-24">
-            <h2 class="text-3xl font-bold mb-10 text-center">常見問題 FAQ</h2>
-            <div class="grid gap-6">
-                <div class="p-8 border border-stone-100 rounded-2xl bg-stone-50">
-                    <h4 class="font-bold text-lg mb-2">Q1：澎湖三天兩夜夠嗎？</h4>
-                    <p class="text-stone-600 leading-relaxed">若安排得宜，經典景點可完整走完，但跳島行程需早起。</p>
-                </div>
-                <div class="p-8 border border-stone-100 rounded-2xl bg-stone-50">
-                    <h4 class="font-bold text-lg mb-2">Q2：澎湖住宿一定要住海邊嗎？</h4>
-                    <p class="text-stone-600 leading-relaxed">不一定。交通便利往往比純海景更重要。</p>
-                </div>
-                <div class="p-8 border border-stone-100 rounded-2xl bg-stone-50">
-                    <h4 class="font-bold text-lg mb-2">Q3：第一次來澎湖住哪裡最方便？</h4>
-                    <p class="text-stone-600 leading-relaxed">多數旅客會選擇馬公市區或市區外圍，兼顧交通與生活機能。</p>
-                </div>
+            <h2 class="text-3xl font-bold mb-12 text-center text-stone-900">規劃小提醒 FAQ</h2>
+            <div class="grid gap-4">
+                <details class="group border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer bg-white group-open:bg-stone-50 transition-colors">
+                        <span class="font-bold text-lg text-stone-800">黑糖糕需要提早訂嗎？</span>
+                        <span class="text-amber-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 bg-stone-50 text-stone-600 leading-relaxed">
+                        黑糖糕建議第三天早上購買。若怕熱門店家賣完，可以第二天晚上先電話預訂，第三天路過市區時直接取貨即可。
+                    </div>
+                </details>
+                <details class="group border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer bg-white group-open:bg-stone-50 transition-colors">
+                        <span class="font-bold text-lg text-stone-800">跳島行程需要提早預約嗎？</span>
+                        <span class="text-amber-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 bg-stone-50 text-stone-600 leading-relaxed">
+                        一定要。尤其是 4-9 月旺季，跳島船位與浮潛名額非常搶手，建議至少在出發前兩週完成預訂。
+                    </div>
+                </details>
             </div>
         </section>
 
-        <!-- 總結 -->
-        <div class="text-center bg-amber-50 p-12 rounded-[2rem] border border-amber-100">
-            <h2 class="text-2xl font-bold mb-4 text-amber-900">澎湖三天兩夜行程安排重點總結</h2>
-            <div class="flex flex-wrap justify-center gap-4 mt-8">
-                <span class="bg-white px-6 py-2 rounded-full text-amber-800 font-bold shadow-sm">第一天輕鬆市區</span>
-                <span class="bg-white px-6 py-2 rounded-full text-amber-800 font-bold shadow-sm">第二天完整環島</span>
-                <span class="bg-white px-6 py-2 rounded-full text-amber-800 font-bold shadow-sm">第三天彈性安排</span>
-            </div>
-            <p class="mt-8 text-amber-950 font-medium">三天兩夜其實很剛好，關鍵在於：「不要把時間浪費在移動上。」</p>
-            <a href="contact.html" class="inline-block mt-10 bg-amber-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">立即聯繫班夫小鎮訂房</a>
+        <div class="text-center bg-gradient-to-br from-amber-50 to-orange-50 p-12 rounded-[3rem] border border-amber-100 shadow-inner">
+            <h2 class="text-2xl font-bold mb-6 text-amber-900">開始規劃您的澎湖之旅</h2>
+            <p class="text-amber-950 font-medium text-lg italic mb-10">從班夫小鎮出發，讓三天兩夜的每分每秒都變得有價值。</p>
+            <a href="contact.html" class="inline-block bg-amber-600 text-white px-12 py-4 rounded-2xl font-bold hover:bg-amber-700 transition shadow-xl hover:scale-105 active:scale-95 duration-200">立即聯繫班夫小鎮訂房</a>
         </div>
 
     </main>
 
-    <!-- 頁尾 -->
     <footer class="footer-bg text-white py-20 px-6">
         <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left">
             <div class="md:col-span-1 space-y-4">
                 <h4 class="text-2xl font-bold tracking-tighter">澎湖班夫小鎮</h4>
-                <p class="text-stone-400 text-sm leading-relaxed">提供最安靜、高品質的澎湖住宿體驗，讓您的旅程慢下來。</p>
+                <p class="text-stone-400 text-sm leading-relaxed">讓澎湖的慢，成為您生活的養分。</p>
             </div>
             <div>
                 <h5 class="font-bold mb-6 text-stone-200">快速連結</h5>
                 <ul class="space-y-3 text-sm text-stone-400">
-                    <li><a href="penghu-stay-guide.html" class="hover:text-white transition">澎湖住宿指南</a></li>
-                    <li><a href="magong-accommodation.html" class="hover:text-white transition">馬公住宿精選</a></li>
-                    <li><a href="penghu-airport-nearby.html" class="hover:text-white transition">機場交通住宿</a></li>
+                    <li><a href="penghu-stay-guide.html" class="hover:text-amber-500 transition">澎湖住宿指南</a></li>
+                    <li><a href="magong-accommodation.html" class="hover:text-amber-500 transition">馬公住宿精選</a></li>
+                    <li><a href="penghu-airport-nearby.html" class="hover:text-amber-500 transition">機場交通住宿</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="font-bold mb-6 text-stone-200">聯絡資訊</h5>
                 <ul class="space-y-3 text-sm text-stone-400">
-                    <li>官方 LINE: @cww2721s</li>
+                    <li class="flex items-center">LINE ID: @cww2721s</li>
+                    <li>FB: 澎湖班夫小鎮渡假民宿</li>
                     <li>地址: 澎湖縣馬公市東衛里5-7號</li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-stone-200">追蹤我們</h5>
-                <p class="text-sm text-stone-400 leading-relaxed">歡迎透過官網預訂，獲取最新優惠資訊。</p>
+                <h5 class="font-bold mb-6 text-stone-200">2026 旅遊資訊</h5>
+                <p class="text-sm text-stone-400 leading-relaxed italic">想知道今年的花火節日期？歡迎與我們聯繫獲得第一手情報。</p>
             </div>
         </div>
         <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-stone-800 text-center text-[11px] text-stone-500 tracking-widest uppercase">
-            © 2026 澎湖班夫小鎮 I BANFF TOWN. All rights reserved. 澎湖住宿推薦首選。
+            © 2026 澎湖班夫小鎮  All rights reserved. 澎湖行程規劃推薦。
         </div>
     </footer>
 
