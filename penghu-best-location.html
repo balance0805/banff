@@ -5,206 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>澎湖住哪裡最方便？區域分析與住宿選擇完整指南｜澎湖班夫小鎮</title>
     <meta name="description" content="第一次規劃澎湖自由行，到底住哪區最方便？詳細解析馬公市區、市郊及各鄉鎮住宿優缺點，幫您找到最適合的旅遊基地。">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; }
         .nav-link { transition: color 0.3s ease; }
         .nav-link:hover { color: #d97706; }
         .footer-bg { background-color: #1a1512; }
     </style>
-</head>
-<body class="bg-white text-stone-800">
 
-    <!-- 導航列 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "澎湖一定要住海邊嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不一定。澎湖各處到海邊都很近。對於短期旅遊，「交通便利性」往往比海景更直接影響旅遊心情與移動效率。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "第一次來澎湖住哪區最推薦？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多數旅客會首選馬公市區或馬公外圍 5-10 分鐘區域，安全性高、生活機能無虞且停車較為方便。"
+        }
+      }]
+    }
+    </script>
+</head>
+<body class="bg-white text-stone-800 antialiased">
+
     <nav class="sticky top-0 z-50 bg-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-            <a href="index.html" class="font-bold text-2xl tracking-tighter text-stone-900">澎湖班夫小鎮</a>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-stone-900 hover:text-amber-600 transition">澎湖班夫小鎮</a>
             <div class="hidden lg:flex items-center space-x-6 text-[15px] font-medium text-stone-600">
                 <a href="index.html" class="nav-link">首頁</a>
                 <a href="penghu-stay-guide.html" class="nav-link">住宿指南</a>
                 <a href="penghu-best-location.html" class="text-amber-600 font-bold">住哪最方便</a>
                 <a href="magong-accommodation.html" class="nav-link">馬公推薦</a>
-                <a href="penghu-airport-nearby.html" class="nav-link">花火節攻略</a>
+                <a href="penghu-airport-nearby.html" class="nav-link">機場附近</a>
                 <a href="penghu-first-time.html" class="nav-link">新手必看</a>
                 <a href="penghu-3days-2nights.html" class="nav-link">行程規劃</a>
-                <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition">訂房資訊</a>
+                <a href="contact.html" class="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition shadow-sm">訂房資訊</a>
+            </div>
+            <div class="lg:hidden">
+                <select onchange="window.location.href=this.value" class="border p-2 rounded-lg text-sm bg-stone-50">
+                    <option value="penghu-best-location.html">住哪最方便</option>
+                    <option value="index.html">首頁</option>
+                    <option value="penghu-stay-guide.html">住宿指南</option>
+                    <option value="contact.html">訂房資訊</option>
+                </select>
             </div>
         </div>
     </nav>
 
-    <!-- 主視覺區 -->
     <header class="bg-stone-50 py-20 border-b border-stone-100">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <span class="inline-block px-4 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-bold mb-4">LOCATION GUIDE</span>
+            <span class="inline-block px-4 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-bold mb-4 uppercase tracking-widest">Location Guide</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-stone-900">澎湖住哪裡最方便？</h1>
-            <p class="text-xl text-stone-600 leading-relaxed font-light">區域分析與住宿選擇完整指南</p>
+            <p class="text-xl text-stone-600 leading-relaxed font-light">澎湖區域分析與住宿位置完整指南</p>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto py-16 px-6">
         
-        <!-- 前言 -->
         <section class="mb-20">
-            <p class="text-lg text-stone-700 leading-relaxed text-center">
-                第一次規劃澎湖自由行，最常出現的問題就是：「澎湖到底住哪裡最方便？」<br>
-                其實答案不只一個，而是要看你的行程重點與旅遊方式。這篇整理澎湖主要住宿區域優缺點，幫你找到最適合的位置。
+            <p class="text-lg text-stone-700 leading-relaxed text-center max-w-2xl mx-auto">
+                第一次規劃澎湖自由行，最常出現的問題就是：「澎湖到底住哪裡最方便？」<br class="hidden md:block">
+                其實答案不只一個，而是要看你的行程重點與旅遊方式。這篇整理澎湖主要住宿區域優缺點，幫你找到最適合的「旅遊基地」。
             </p>
         </section>
 
-        <!-- 區域比較 -->
         <section class="mb-24">
-            <h2 class="text-3xl font-bold mb-10 flex items-center justify-center">
-                <span class="w-10 h-[2px] bg-amber-600 mr-4"></span>
-                澎湖主要住宿區域比較
-                <span class="w-10 h-[2px] bg-amber-600 ml-4"></span>
+            <h2 class="text-3xl font-bold mb-10 flex items-center justify-center text-stone-900">
+                <span class="hidden md:block w-10 h-[2px] bg-amber-600 mr-4"></span>
+                主要住宿區域比較
+                <span class="hidden md:block w-10 h-[2px] bg-amber-600 ml-4"></span>
             </h2>
 
             <div class="space-y-8">
-                <!-- 馬公市區 -->
-                <div class="p-8 bg-white border border-stone-100 shadow-sm rounded-3xl">
+                <div class="p-8 bg-white border border-stone-100 shadow-sm rounded-3xl hover:border-stone-200 transition">
                     <h3 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-stone-900 text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
-                        馬公市區
+                        <span class="w-8 h-8 bg-stone-900 text-white rounded-full flex items-center justify-center text-sm mr-3 font-mono">1</span>
+                        馬公市區 <span class="text-sm font-normal ml-2 text-stone-500">(Magong City)</span>
                     </h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <div class="font-bold text-green-700">✔ 優點</div>
-                            <ul class="text-stone-600 text-sm space-y-1 list-disc pl-4">
-                                <li>美食最集中、生活機能強</li>
-                                <li>花火節主場（觀音亭）在此</li>
-                                <li>夜晚最熱鬧、逛街方便</li>
-                                <li>市中心景點步行可達</li>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <div class="font-bold text-emerald-700 flex items-center">
+                                <span class="mr-2">✔</span> 優點
+                            </div>
+                            <ul class="text-stone-600 text-sm space-y-2 list-none pl-1">
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 美食最集中、生活機能最強</li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 花火節主場（觀音亭）步行可達</li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 夜晚最熱鬧、逛街購物極方便</li>
                             </ul>
                         </div>
-                        <div class="space-y-2">
-                            <div class="font-bold text-red-700">✘ 缺點</div>
-                            <ul class="text-stone-600 text-sm space-y-1 list-disc pl-4">
-                                <li>停車極度不便（單行道多）</li>
-                                <li>旅遊旺季環境較吵雜</li>
+                        <div class="space-y-3">
+                            <div class="font-bold text-rose-700 flex items-center">
+                                <span class="mr-2">✘</span> 缺點
+                            </div>
+                            <ul class="text-stone-600 text-sm space-y-2 list-none pl-1">
+                                <li class="flex items-start"><span class="text-rose-500 mr-2">●</span> 巷弄狹窄、開車停車極度不便</li>
+                                <li class="flex items-start"><span class="text-rose-500 mr-2">●</span> 旅遊旺季環境較吵雜，房價較高</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 馬公市區外圍 -->
-                <div class="p-8 bg-amber-50 border border-amber-100 shadow-sm rounded-3xl">
+                <div class="p-8 bg-amber-50 border border-amber-100 shadow-sm rounded-3xl hover:shadow-md transition">
                     <h3 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
-                        馬公市區外圍 <span class="text-sm font-normal ml-2 text-stone-500">（5-10 分鐘車程）</span>
+                        <span class="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm mr-3 font-mono">2</span>
+                        馬公市外圍 <span class="text-sm font-normal ml-2 text-stone-500">（5-10 分鐘車程）</span>
                     </h3>
-                    <p class="text-stone-600 text-sm mb-4 italic">這類型位置常被忽略，但其實對於大多數自由行旅客最實用。</p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <div class="font-bold text-green-700">✔ 優點</div>
-                            <ul class="text-stone-600 text-sm space-y-1 list-disc pl-4">
-                                <li>距離市區極近，補給方便</li>
-                                <li>環境安靜，睡眠品質佳</li>
-                                <li>停車空間寬敞且免費</li>
-                                <li>去機場、南北環島動線最順</li>
+                    <p class="text-amber-800 text-sm mb-6 font-medium bg-white/50 inline-block px-3 py-1 rounded-lg">☆ 自由行旅客最實用的位置類型</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <div class="font-bold text-emerald-700 flex items-center">
+                                <span class="mr-2">✔</span> 優點
+                            </div>
+                            <ul class="text-stone-600 text-sm space-y-2 list-none pl-1">
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 環境安靜，保證優質睡眠品質</li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 停車空間寬敞且通常免費</li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> 往返機場、南北環島動線最均衡</li>
                             </ul>
                         </div>
-                        <div class="space-y-2">
-                            <div class="font-bold text-stone-700">💡 專家觀點</div>
-                            <p class="text-stone-600 text-xs leading-relaxed">
-                                若住宿距離機場 3km、市區 8-10min（如班夫小鎮），第一天下機不需長途移動，晚上回程也不必騎遠路，效率最高。
+                        <div class="space-y-3">
+                            <div class="font-bold text-amber-900 flex items-center">
+                                <span class="mr-2">💡</span> 專家動線分析
+                            </div>
+                            <p class="text-stone-600 text-xs leading-relaxed bg-white p-4 rounded-xl shadow-inner italic">
+                                若住宿距離機場 3-5km、市區 8min（如班夫小鎮），第一天下機不需長途搬運行李，晚上回程也不必騎遠路，旅遊效率最高。
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 郊區鄉鎮 -->
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100">
-                        <h4 class="font-bold mb-3">白沙鄉 / 西嶼鄉</h4>
-                        <p class="text-stone-500 text-xs leading-relaxed">靠近跨海大橋與燈塔。海景絕美，但距離馬公市區遠，晚餐選擇少，適合喜歡離群索居的旅客。</p>
+                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:bg-white transition">
+                        <h4 class="font-bold mb-3 text-stone-900">白沙 / 西嶼</h4>
+                        <p class="text-stone-500 text-xs leading-relaxed">靠近跨海大橋。海景絕美適合放空，但距離市區極遠，晚餐選擇稀少，適合追求離群索居的深度旅伴。</p>
                     </div>
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100">
-                        <h4 class="font-bold mb-3">湖西鄉</h4>
-                        <p class="text-stone-500 text-xs leading-relaxed">介於機場與市區之間。靠近摩西分海等景點，相對安靜，但生活機能不如市區集中。</p>
+                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:bg-white transition">
+                        <h4 class="font-bold mb-3 text-stone-900">湖西鄉</h4>
+                        <p class="text-stone-500 text-xs leading-relaxed">介於機場與市區之間。靠近摩西分海，環境純樸靜謐，適合想體驗傳統聚落與悠閒步調的旅客。</p>
                     </div>
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100">
-                        <h4 class="font-bold mb-3">南環區域</h4>
-                        <p class="text-stone-500 text-xs leading-relaxed">靠近山水沙灘、嵵裡沙灘。適合衝浪者或喜愛海洋休閒的旅客，距離市區約 15-20 分鐘。</p>
+                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:bg-white transition">
+                        <h4 class="font-bold mb-3 text-stone-900">南環區域</h4>
+                        <p class="text-stone-500 text-xs leading-relaxed">靠近山水沙灘、嵵裡。適合衝浪者或每日都想玩水的海灘愛好者，距離馬公市區約 15-20 分鐘車程。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 行程效率 -->
-        <section class="mb-24 px-10 py-16 bg-stone-900 text-white rounded-[3rem]">
-            <h2 class="text-3xl font-bold mb-10 text-center">三天兩夜怎麼選最方便？</h2>
+        <section class="mb-24 px-10 py-16 bg-stone-900 text-white rounded-[3rem] shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-12 opacity-10 text-8xl">🚢</div>
+            <h2 class="text-3xl font-bold mb-10 text-center text-amber-400">三天兩夜怎麼選位置？</h2>
             <div class="max-w-2xl mx-auto space-y-6">
-                <p class="text-stone-400 text-center mb-8">若是三天兩夜標準玩法（Day1市區、Day2環島、Day3跳島），住宿位置應具備：</p>
-                <div class="flex items-center space-x-4 border-b border-stone-800 pb-4">
-                    <span class="text-amber-500 font-bold">01.</span>
-                    <span class="text-stone-200">去機場不超過 15 分鐘，免去趕機壓力</span>
+                <p class="text-stone-400 text-center mb-10 leading-relaxed">如果您是第一次來，安排標準玩法（Day1環島、Day2跳島、Day3市區），您的住宿位置必須具備：</p>
+                <div class="flex items-center space-x-6 border-b border-stone-800 pb-6">
+                    <span class="text-amber-500 font-bold font-mono text-2xl">01.</span>
+                    <span class="text-stone-200">去機場不超過 15 分鐘，大幅降低最後一天趕機壓力。</span>
                 </div>
-                <div class="flex items-center space-x-4 border-b border-stone-800 pb-4">
-                    <span class="text-amber-500 font-bold">02.</span>
-                    <span class="text-stone-200">不要每天騎 30 分鐘回住宿，保留體力給景點</span>
+                <div class="flex items-center space-x-6 border-b border-stone-800 pb-6">
+                    <span class="text-amber-500 font-bold font-mono text-2xl">02.</span>
+                    <span class="text-stone-200">不要每天額外花 40 分鐘往返市區與住宿，保留體力給景點。</span>
                 </div>
-                <div class="flex items-center space-x-4 border-b border-stone-800 pb-4">
-                    <span class="text-amber-500 font-bold">03.</span>
-                    <span class="text-stone-200">鄰接主要幹道（如 204、203 縣道），動線不繞路</span>
+                <div class="flex items-center space-x-6 border-b border-stone-800 pb-6">
+                    <span class="text-amber-500 font-bold font-mono text-2xl">03.</span>
+                    <span class="text-stone-200">緊鄰主要幹道，無論出發前往北環或南環都極度順暢。</span>
                 </div>
-                <p class="text-amber-400 text-sm mt-8 text-center font-bold">綜合考量，多數旅客會選擇馬公市區或市郊 10 分鐘範圍內。</p>
+                <p class="text-amber-400 text-sm mt-10 text-center font-bold tracking-widest uppercase">── 綜合考量：馬公外圍 5-10 分鐘區間是 CP 值最高的首選 ──</p>
             </div>
         </section>
 
-        <!-- 關鍵動線分析 -->
         <section class="mb-24">
-            <h2 class="text-2xl font-bold mb-8 text-center">澎湖住哪裡最方便？關鍵其實是「動線」</h2>
+            <h2 class="text-2xl font-bold mb-10 text-center text-stone-900 underline underline-offset-8 decoration-amber-500">澎湖住宿：動線決定深度</h2>
             <p class="text-stone-600 text-center mb-12">真正影響旅遊品質的不是房間大小，而是移動的效率。</p>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="text-3xl mb-3">🛣️</div>
+                <div class="text-center p-8 border border-stone-50 rounded-2xl">
+                    <div class="text-4xl mb-4">🛣️</div>
                     <h4 class="font-bold mb-2">環島出發順</h4>
-                    <p class="text-stone-500 text-sm">住在幹道旁，出發前往北環或南環不需穿過擁擠市區。</p>
+                    <p class="text-stone-500 text-sm leading-relaxed">住在主要縣道旁，避開市區塞車段，出發即景點。</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="text-3xl mb-3">⚓</div>
-                    <h4 class="font-bold mb-2">跳島行程快</h4>
-                    <p class="text-stone-500 text-sm">距離南海遊客中心約 8-10 分鐘，早上出港趕船不匆忙。</p>
+                <div class="text-center p-8 border border-stone-50 rounded-2xl">
+                    <div class="text-4xl mb-4">⚓</div>
+                    <h4 class="font-bold mb-2">跳島船班準</h4>
+                    <p class="text-stone-500 text-sm leading-relaxed">距離南海遊客中心約 8 分鐘，不必擔心鬧鐘沒響錯過船班。</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="text-3xl mb-3">✈️</div>
-                    <h4 class="font-bold mb-2">送機無壓力</h4>
-                    <p class="text-stone-500 text-sm">回程前最後一個採買點到機場距離短，時間更好掌控。</p>
+                <div class="text-center p-8 border border-stone-50 rounded-2xl">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h4 class="font-bold mb-2">機位時間穩</h4>
+                    <p class="text-stone-500 text-sm leading-relaxed">採買完伴手禮後到機場車程極短，免除路上突發狀況。</p>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="mb-24">
-            <h2 class="text-2xl font-bold mb-8 text-center">常見問題 FAQ</h2>
-            <div class="space-y-4 max-w-2xl mx-auto">
-                <div class="p-6 bg-stone-50 rounded-2xl">
+        <section class="mb-24 py-16 border-t border-stone-100">
+            <h2 class="text-2xl font-bold mb-10 text-center text-stone-900">住宿常見問題 FAQ</h2>
+            <div class="space-y-6 max-w-2xl mx-auto">
+                <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100">
                     <p class="font-bold text-stone-900 mb-2">Q1：澎湖一定要住海邊嗎？</p>
-                    <p class="text-stone-600 text-sm">不一定。澎湖各處到海邊都很近。對於短期旅遊，「交通便利性」往往比海景更直接影響旅遊心情。</p>
+                    <p class="text-stone-600 text-sm leading-relaxed">不一定。澎湖是海島，各處到海邊都很近。對於 3-4 天的短期旅遊，「交通便利性」往往比海景更直接影響旅遊心情。</p>
                 </div>
-                <div class="p-6 bg-stone-50 rounded-2xl">
-                    <p class="font-bold text-stone-900 mb-2">Q2：第一次來澎湖住哪區最推薦？</p>
-                    <p class="text-stone-600 text-sm">多數旅客會首選馬公市區或馬公外圍 5-10 分鐘區域，安全性高且生活機能無虞。</p>
+                <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100">
+                    <p class="font-bold text-stone-900 mb-2">Q2：第一次來澎湖最推薦住哪一區？</p>
+                    <p class="text-stone-600 text-sm leading-relaxed">如果您希望行程安排最順暢，首選「馬公外圍 5-10 分鐘區域」（如：東衛、西文附近），這能同時擁有市區的便利與郊區的安靜。</p>
                 </div>
             </div>
         </section>
 
-        <!-- 行動呼籲 -->
-        <div class="text-center">
-            <h3 class="text-2xl font-bold mb-8">找到您在澎湖的最佳基地</h3>
-            <a href="contact.html" class="inline-block bg-amber-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">瞭解班夫小鎮的位置優勢</a>
+        <div class="text-center bg-amber-50 py-16 rounded-[3rem] border border-amber-100">
+            <h3 class="text-2xl font-bold mb-8 text-stone-800">找到您在澎湖的最佳旅行基地</h3>
+            <a href="contact.html" class="inline-block bg-amber-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">瞭解班夫小鎮的位置與房型</a>
         </div>
 
     </main>
 
-    <!-- 頁尾 -->
     <footer class="footer-bg text-white py-16 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h4 class="text-xl font-bold mb-4 tracking-tighter">澎湖班夫小鎮</h4>
-            <p class="text-stone-500 text-sm mb-8">地理位置優越的澎湖住宿｜給您最順暢的旅遊體驗。</p>
+            <h4 class="text-xl font-bold mb-4 tracking-tighter italic">澎湖班夫小鎮</h4>
+            <p class="text-stone-500 text-sm mb-8">地理位置優越的澎湖民宿｜提供您最順暢、高品質的跳島旅遊體驗。</p>
             <div class="border-t border-stone-800 pt-8 text-[11px] text-stone-600 tracking-widest uppercase">
-                © 2026 澎湖班夫小鎮  All rights reserved.
+                © 2026 澎湖班夫小鎮 All rights reserved.
             </div>
         </div>
     </footer>
